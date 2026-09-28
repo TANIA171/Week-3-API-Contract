@@ -28,7 +28,7 @@
 
 ### Create Request
 ```http
-POST /api/books
+POST/api/books
 Content-Type: application/json
 Accept: application/json
 
@@ -38,8 +38,7 @@ Accept: application/json
   "author_name": "Robert C. Martin",
   "published_year": 2008
 }
-200 OK — Daftar Buku
-json{
+200 OK — Daftar Bukujson{
   "data": [
     {
       "id": 15,
@@ -75,7 +74,6 @@ json{
 ## Design Decisions
 - Menggunakan **method PATCH** untuk mengubah data, karena klien hanya perlu mengirim kolom yang berubah, bukan seluruh data.
 - Kolom `available` bersifat **hanya-baca (read-only)** karena nilainya diatur oleh sistem berdasarkan status peminjaman, bukan dikirim oleh klien.
-
 ## Refleksi
 1. **Keputusan yang paling memengaruhi klien:** Bentuk struktur respons JSON, nama setiap kolom, tipe datanya, dan kode status yang dikembalikan. Jika bagian ini berubah, kode di sisi klien harus disesuaikan.
 2. **Risiko jika tipe data kolom berubah:** Akan menyebabkan kegagalan saat membaca data di klien, tampilan menjadi tidak benar, atau aturan pemrosesan menjadi salah.
