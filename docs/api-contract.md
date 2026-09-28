@@ -64,7 +64,9 @@ Accept: application/json
   "message": "Book not found",
   "errors": null
 }
-422 Unprocessable Contentjson{
+### 422 Unprocessable Content
+```json
+{
   "message": "The given data was invalid.",
   "errors": {
     "title": ["The title field is required."],
