@@ -1,0 +1,193 @@
+{
+  "info": {
+    "_postman_id": "10e0775c-dd2b-4ae6-bb30-cd6b652b6919",
+    "name": "Minggu 3 — API Contract",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58142689",
+    "_collection_link": "https://go.postman.co/collection/58142689-10e0775c-dd2b-4ae6-bb30-cd6b652b6919?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "List Books[Resource]",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "file",
+          "file": {
+            "src": ""
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/books",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 0k",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": " application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/books",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "books"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"data\": [\n    {\n      \"id\": 15,\n      \"title\": \"Clean Code\",\n      \"isbn\": \"9780132350884\",\n      \"author_name\": \"Robert C. Martin\",\n      \"available\": true\n    }\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Books [Resource]",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Clean Code\",\r\n  \"isbn\": \"9780132350884\",\r\n  \"author_name\": \"Robert C. Martin\",\r\n  \"published_year\": 2008\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/books",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "201 Created",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"data\": {\n    \"id\": 15,\n    \"title\": \"Clean Code\",\n    \"isbn\": \"9780132350884\",\n    \"author_name\": \"Robert C. Martin\",\n    \"published_year\": 2008,\n    \"available\": true,\n    \"created_at\": \"2026-09-25T09:30:00Z\"\n  }\n}"
+        },
+        {
+          "name": "404 Not Found",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Book not found\",\n    \"errors\": null\n}"
+        },
+        {
+          "name": "422 Validation Error",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "status": "Validation Error",
+          "code": 422,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n        \"title\": [\n            \"The title field is required.\"\n        ],\n        \"isbn\": [\n            \"The isbn has already been taken.\"\n        ]\n    }\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "variable",
+      "value": ""
+    },
+    {
+      "key": "Initial value",
+      "value": ""
+    },
+    {
+      "key": "Current value",
+      "value": ""
+    }
+  ]
+}
