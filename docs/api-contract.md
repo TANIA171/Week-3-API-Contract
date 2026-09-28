@@ -72,14 +72,14 @@ json{
     "isbn": ["The isbn has already been taken.", "The isbn must be 10 or 13 digits."]
   }
 }
-Design Decisions
-Menggunakan method PATCH untuk mengubah data, karena klien hanya perlu mengirim kolom yang berubah, bukan seluruh data.
-Kolom available bersifat hanya-baca (read-only) karena nilainya diatur oleh sistem berdasarkan status peminjaman, bukan dikirim oleh klien.
-Refleksi
-Keputusan yang paling memengaruhi klien: Bentuk struktur respons JSON, nama setiap kolom, tipe datanya, dan kode status yang dikembalikan. Jika bagian ini berubah, kode di sisi klien harus disesuaikan.
-Risiko jika tipe data kolom berubah: Akan menyebabkan kegagalan saat membaca data di klien, tampilan menjadi tidak benar, atau aturan pemrosesan menjadi salah.
-Bagian yang akan diterjemahkan ke Laravel:
+## Design Decisions
+- Menggunakan **method PATCH** untuk mengubah data, karena klien hanya perlu mengirim kolom yang berubah, bukan seluruh data.
+- Kolom `available` bersifat **hanya-baca (read-only)** karena nilainya diatur oleh sistem berdasarkan status peminjaman, bukan dikirim oleh klien.
 
-Titik akhir (Endpoint) → ditulis di routes/api.php sebagai Rute
-Aturan validasi → ditulis di bagian validate() pada Pengendali (Controller) atau Permintaan Bentuk (Form Request)
-Bentuk respons → dibuat sebagai Sumber Daya API (API Resource) di folder app/Http/Resources'
+## Refleksi
+1. **Keputusan yang paling memengaruhi klien:** Bentuk struktur respons JSON, nama setiap kolom, tipe datanya, dan kode status yang dikembalikan. Jika bagian ini berubah, kode di sisi klien harus disesuaikan.
+2. **Risiko jika tipe data kolom berubah:** Akan menyebabkan kegagalan saat membaca data di klien, tampilan menjadi tidak benar, atau aturan pemrosesan menjadi salah.
+3. **Bagian yang akan diterjemahkan ke Laravel:**
+   - **Titik akhir (Endpoint)** → ditulis di `routes/api.php` sebagai Rute
+   - **Aturan validasi** → ditulis di bagian `validate()` pada Pengendali (Controller) atau Permintaan Bentuk (Form Request)
+   - **Bentuk respons** → dibuat sebagai Sumber Daya API (API Resource) di folder `app/Http/Resources/`
