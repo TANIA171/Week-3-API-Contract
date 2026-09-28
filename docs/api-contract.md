@@ -27,7 +27,7 @@
 ## Request & Response Contract
 
 ### Create Request
-```http
+http
 POST/api/books
 Content-Type: application/json
 Accept: application/json
@@ -40,7 +40,7 @@ Accept: application/json
 }
 200 OK — Daftar Bukujson{
   "data": [
-    {
+{
       "id": 15,
       "title": "Clean Code",
       "isbn": "9780132350884",
@@ -64,9 +64,7 @@ Accept: application/json
   "message": "Book not found",
   "errors": null
 }
-### 422 Unprocessable Content
-```json
-{
+422 Unprocessable Contentjson{
   "message": "The given data was invalid.",
   "errors": {
     "title": ["The title field is required."],
