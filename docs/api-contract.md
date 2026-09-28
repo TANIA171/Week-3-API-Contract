@@ -38,7 +38,8 @@ Accept: application/json
   "author_name": "Robert C. Martin",
   "published_year": 2008
 }
-200 OK — Daftar Bukujson{
+200 OK — Daftar Buku
+json{
   "data": [
     {
       "id": 15,
