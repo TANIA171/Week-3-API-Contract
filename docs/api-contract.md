@@ -28,7 +28,7 @@
 
 ### Create Request
 ```http
-POST /api/books
+### POST /api/books
 Content-Type: application/json
 Accept: application/json
 
