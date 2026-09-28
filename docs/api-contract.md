@@ -61,7 +61,6 @@ json{
     "created_at": "2026-09-25T09:30:00Z"
   }
 }
-
 404 Not Foundjson{
   "message": "Book not found",
   "errors": null
@@ -83,4 +82,4 @@ Bagian yang akan diterjemahkan ke Laravel:
 
 Titik akhir (Endpoint) → ditulis di routes/api.php sebagai Rute
 Aturan validasi → ditulis di bagian validate() pada Pengendali (Controller) atau Permintaan Bentuk (Form Request)
-Bentuk respons → dibuat sebagai Sumber Daya API (API Resource) di folder app/Http/Resources
+Bentuk respons → dibuat sebagai Sumber Daya API (API Resource) di folder app/Http/Resources'
