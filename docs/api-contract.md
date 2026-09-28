@@ -61,7 +61,9 @@ json{
     "created_at": "2026-09-25T09:30:00Z"
   }
 }
-404 Not Foundjson{
+### 404 Not Found
+```json
+{
   "message": "Book not found",
   "errors": null
 }
