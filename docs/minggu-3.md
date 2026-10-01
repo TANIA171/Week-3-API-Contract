@@ -56,15 +56,6 @@ Menerapkan perancangan API Contract pada sistem informasi perpustakaan sebagai k
   "message": "Book not found",
   "errors": null
 }
-422 Unprocessable Content — Validasi Gagal
-json
-{
-  "message": "The given data was invalid.",
-  "errors": {
-    "title": ["The title field is required."],
-    "isbn": ["The isbn has already been taken.", "The isbn must be 10 or 13 digits."]
-  }
-}
 ```
 ### 422 Unprocessable Content
 ```json
