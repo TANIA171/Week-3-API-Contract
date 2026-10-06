@@ -88,9 +88,9 @@ Accept: application/json
 Menggunakan method PATCH untuk mengubah data, karena client hanya perlu mengirim field yang berubah, tidak seluruh data.
 Field available bersifat read-only karena nilainya diatur oleh sistem berdasarkan status peminjaman, bukan dikirim client.
 ## Refleksi
-Keputusan yang paling memengaruhi client: Bentuk struktur JSON, nama field, tipe data, dan kode status respons. Jika berubah, kode pemanggil di sisi client harus diubah.
-Risiko jika tipe field berubah: Akan menyebabkan error parsing data di client, tampilan rusak, atau logika pemrosesan gagal.
-Bagian yang diterjemahkan ke Laravel:
-Endpoint : Route di routes/api.php
-Aturan validasi : bagian validate() di Controller atau Form Request
-Bentuk respons : API Resource di app/Http/Resources/
+- Keputusan yang paling memengaruhi client: Bentuk struktur JSON, nama field, tipe data, dan kode status respons. Jika berubah, kode pemanggil di sisi client harus diubah.
+- Risiko jika tipe field berubah: Akan menyebabkan error parsing data di client, tampilan rusak, atau logika pemrosesan gagal.
+## Bagian yang diterjemahkan ke Laravel:
+- Endpoint : Route di routes/api.php
+- Aturan validasi : bagian validate() di Controller atau Form Request
+- Bentuk respons : API Resource di app/Http/Resources/
