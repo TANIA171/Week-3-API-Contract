@@ -38,7 +38,10 @@ Accept: application/json
   "author_name": "Robert C. Martin",
   "published_year": 2008
 }
-200 OK — Daftar Bukujson{
+```
+## 200 OK — Daftar Buku
+```json
+{
   "data": [
     {
       "id": 15,
@@ -49,7 +52,10 @@ Accept: application/json
     }
   ]
 }
-201 Created — Buku Berhasil Dibuatjson{
+```
+## 201 Created — Buku Berhasil
+```json
+{
   "data": {
     "id": 15,
     "title": "Clean Code",
@@ -60,12 +66,16 @@ Accept: application/json
     "created_at": "2026-09-25T09:30:00Z"
   }
 }
-404 Not Foundjson{
+```
+## 404 Not Found
+```json
+{
   "message": "Book not found",
   "errors": null
 }
-422 Unprocessable Content
-json
+```
+## 422 Unprocessable Content
+```json
 {
   "message": "The given data was invalid.",
   "errors": {
@@ -73,10 +83,11 @@ json
     "isbn": ["The isbn has already been taken.", "The isbn must be 10 or 13 digits."]
   }
 }
-Design Decisions
+```
+## Design Decisions
 Menggunakan method PATCH untuk mengubah data, karena client hanya perlu mengirim field yang berubah, tidak seluruh data.
 Field available bersifat read-only karena nilainya diatur oleh sistem berdasarkan status peminjaman, bukan dikirim client.
-Refleksi
+## Refleksi
 Keputusan yang paling memengaruhi client: Bentuk struktur JSON, nama field, tipe data, dan kode status respons. Jika berubah, kode pemanggil di sisi client harus diubah.
 Risiko jika tipe field berubah: Akan menyebabkan error parsing data di client, tampilan rusak, atau logika pemrosesan gagal.
 Bagian yang diterjemahkan ke Laravel:
